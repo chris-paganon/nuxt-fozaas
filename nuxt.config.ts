@@ -7,10 +7,12 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@primevue/nuxt-module', '@pinia/nuxt', '@nuxt/eslint'],
-  // imports: {
-  //   dirs: ['composables/stores/**'],
-  // },
+  modules: [
+    '@primevue/nuxt-module',
+    '@pinia/nuxt',
+    '@nuxt/eslint',
+    'nuxt-security',
+  ],
   css: ['primeicons/primeicons.css', '@/assets/css/main.css'],
   postcss: {
     plugins: {
@@ -31,5 +33,21 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  security: {
+    headers: {
+      crossOriginEmbedderPolicy: false,
+      contentSecurityPolicy: {
+        'script-src': [
+          "'self'",
+          'https:',
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "'strict-dynamic'",
+          "'nonce-{{nonce}}'",
+        ],
+      },
+    },
+    xssValidator: false,
   },
 });
