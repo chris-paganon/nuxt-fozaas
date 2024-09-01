@@ -8,10 +8,23 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   modules: ['@primevue/nuxt-module'],
   devtools: { enabled: true },
+  css: ['@/assets/css/main.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   primevue: {
     options: {
       theme: {
         preset: Lara,
+        options: {
+          cssLayer: {
+            name: 'primevue',
+            order: 'primevue, tailwind-utilities',
+          },
+        },
       },
     },
   },
