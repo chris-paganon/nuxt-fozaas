@@ -6,8 +6,11 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: '2024-04-03',
-  modules: ['@primevue/nuxt-module', '@nuxt/eslint'],
   devtools: { enabled: true },
+  modules: ['@primevue/nuxt-module', '@pinia/nuxt', '@nuxt/eslint'],
+  // imports: {
+  //   dirs: ['composables/stores/**'],
+  // },
   css: ['primeicons/primeicons.css', '@/assets/css/main.css'],
   postcss: {
     plugins: {
