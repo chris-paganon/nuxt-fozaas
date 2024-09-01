@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:alpine
+    shm_size: 128mb
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: 'nuxt-fozaas'
+      POSTGRES_DB: 'nuxt-fozaas'
+      POSTGRES_PASSWORD: 'password'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  db-viewer:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@m.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - 82:80
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  db-data:
+  pgadmin-data:
