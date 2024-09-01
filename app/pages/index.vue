@@ -1,6 +1,6 @@
 <template>
   <div>
     <h1>Home</h1>
-    <Button class="ml-1">Click me</Button>
+    <Button label="Save" class="ml-1" icon="pi pi-check" />
   </div>
 </template>
