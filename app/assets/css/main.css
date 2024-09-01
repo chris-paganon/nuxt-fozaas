@@ -1,6 +1,27 @@
-@layer primevue, tailwind-utilities;
+@layer reset, primevue, tailwind-utilities;
 
 @layer tailwind-utilities {
   @tailwind components;
   @tailwind utilities;
+}
+
+@layer reset {
+  /* Uncomment for tailwind base reset */
+  /* @tailwind base; */
+
+  /* Or use custom reset to keep more base primevue styles (i.e. headings font-sizes) */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

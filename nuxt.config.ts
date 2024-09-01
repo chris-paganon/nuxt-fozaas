@@ -17,12 +17,13 @@ export default defineNuxtConfig({
   },
   primevue: {
     options: {
+      ripple: true,
       theme: {
         preset: Lara,
         options: {
           cssLayer: {
             name: 'primevue',
-            order: 'primevue, tailwind-utilities',
+            order: 'reset, primevue, tailwind-utilities',
           },
         },
       },
