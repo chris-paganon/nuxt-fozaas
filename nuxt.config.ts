@@ -1,3 +1,5 @@
+import Lara from '@primevue/themes/lara';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
@@ -9,6 +11,10 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   primevue: {
-    autoImport: true,
+    options: {
+      theme: {
+        preset: Lara,
+      }
+    }
   }
 })
